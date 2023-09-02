@@ -4,15 +4,7 @@ import { NewTodoForm } from "./newTodoForm";
 import { TodoList } from "./TodoList";
 
 export default function App() {
-  const [todos, settodos] = useState(()=>{
-    const localValue = localStorage.getItem("ITEMS")
-    if (localValue===null) return []
-    return JSON.parse(localValue)
-  });
-
-  useEffect(()=>{
-    localStorage.setItem("ITEMS", JSON.stringify(todos))
-  },[todos])
+  const [todos, settodos] = useState("");
 
   function addTodo(title) {
     settodos((curentList) => {
